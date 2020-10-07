@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>table</title>
+    <style>
+
+        table, th, td {
+            border: 1px solid;
+            text-align: left;
+        }
+
+        table{
+            border: 1px dashed;
+        }
+        th {
+            width: 50px;
+        }
+
+        td {
+            width: 200px;
+        }
+
+        caption {
+            text-align: right;
+        }
+
+
+    </style>
+</head>
+<body>
+
+
+<table width="300px">
+    <caption>Таблица с товарами</caption>
+    <thead>
+    <tr style="height: 30px">
+        <th>#</th>
+        <th>name</th>
+        <th>desc</th>
+        <th>price</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <th>1</th>
+        <td>Хлеб</td>
+        <td rowspan="3">вкусное</td>
+        <td rowspan="2">15</td>
+    </tr>
+    <tr>
+        <th>3</th>
+        <td>молоко</td>
+
+
+    </tr>
+    <tr>
+        <th>2</th>
+        <td>мясо</td>
+        <td>50</td>
+    </tr>
+
+    </tbody>
+    <tfoot>
+    <tr>
+        <td colspan="3">Итого</td>
+        <td>80</td>
+    </tr>
+    </tfoot>
+
+</table>
+
+
+<ul style="color: red;margin-left: 150px; list-style-image: url('https://images.zakupka.com/i3/firms/27/113/113176/antistressovaya-igrushka-podushka-soft-toys-smaylik-podmigivaet_76590f1817cd1e1_200x200.jpg'); ">
+    <li style="color: blue; list-style-image: url('https://99px.ru/sstorage/1/2019/01/image_12101190255345455401.jpg'); margin-left: 150px">1</li>
+    <li>2</li>
+    <li>3</li>
+</ul>
+
+
+<a href="http://google.com"><img src="https://99px.ru/sstorage/1/2019/01/image_12101190255345455401.jpg" alt=""></a>
+</body>
+</html>
