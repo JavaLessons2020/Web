@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Forms
+    </title>
+    <style>
+        body {
+            text-align: center;
+        }
+
+        form {
+            position: relative;
+            border: 1px solid;
+            border-radius: 15px;
+            text-align: center;
+            display: inline-block;
+            padding: 10px;
+            margin-top: 40px;
+        }
+
+        fieldset {
+            border-radius: 15px;
+            background-color: lightgray;
+        }
+
+        input {
+            margin-top: 10px;
+        }
+
+    </style>
+</head>
+<body>
+<form action="/sign_in" method="post">
+    <fieldset>
+        <legend>Login</legend>
+        Enter name <br>
+        <input type="text" name="name" placeholder="Имя">
+        <br>
+        Enter password <br>
+        <input type="password" name="password" placeholder="Пароль">
+    </fieldset>
+    <br>
+    какие языки вы знаете?
+    <br>
+
+    <label for="first">русский</label>
+    <input type="checkbox" id="first" name="rus" checked>
+    <br>
+
+    <label>англиский
+        <input type="checkbox" name="en"></label>
+    <br>
+    Ваш пол
+    <br>
+    <label>
+        <input type="radio" name="dum" value="man">
+        Муж
+    </label>
+    <label>
+        <input type="radio" name="dum" value="woman">
+        Жен
+    </label>
+    <br>
+    Загрузить фотографию
+    <br>
+    <input type="file" name="image" multiple accept=".jpg .png .exe">
+    <br>
+    <div id="range"></div>
+    <input type="range" name="price" max="10000" min="100">
+    <br>
+    <input type="number" name="price" max="1000" min="10" step="0.1">
+    <br>
+    <input type="tel" pattern="(\+38\s?)s?\(0\d{2}\)\s?\d{3}\s?\-?\s?\d{2}\-?\s?\d{2}"
+           name="phone" placeholder="+38(012)345-67-98" required>
+    <br>
+    <input type="email" placeholder="email xxx@xxx.xxx" name="email" required
+           pattern="\w+@\w+\.\w+">
+    <br>
+    <input type="reset">
+    <br>
+    <textarea rows="5" cols="20" name="comment"></textarea>
+    <br>
+    <select name="selection">
+        <optgroup label="first">
+            <option value="chrome">chrome</option>
+            <option value="firefox">firefox</option>
+        </optgroup>
+        <optgroup label="second">
+            <option value="edge">edge</option>
+            <option value="opera">opera</option>
+        </optgroup>
+    </select>
+
+    <br>
+    <input type="text" name="car" list="cars">
+    <datalist id="cars">
+        <option>Toyota</option>
+        <option>Tesla</option>
+        <option>Vaz</option>
+    </datalist>
+    <br>
+    <input type="submit" value="submit">
+</form>
+</body>
+</html>

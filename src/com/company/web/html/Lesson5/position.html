@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Position</title>
+    <style>
+        div {
+            position: relative;
+            border: 1px solid;
+
+        }
+
+        #one {
+            top: -8px;
+            left: -8px;
+        }
+
+        #two {
+            /*margin-top: 100px;*/
+            top: 50px;
+            right: 40px;
+            left: 40px;
+
+        }
+
+        #parent {
+            position: absolute;
+            top: 100px;
+            height: 100px;
+            width: 500px;
+        }
+
+        #child1 {
+            position: absolute;
+            width: 100px;
+            height: 50px;
+            top: 30px;
+            left: 30px;
+            background-color: #2d29b2;
+            z-index: 2;
+
+
+        }
+
+        #child2 {
+            position: absolute;
+            width: 100px;
+            height: 50px;
+            background-color: #e2861b;
+            /*opacity: .5;*/
+
+        }
+
+
+        #call {
+            z-index: 10;
+            position: fixed;
+            /*position: sticky;*/
+            /*top:0px;*/
+            right: 10px;
+            bottom: 10px;
+            background-color: #52b24f;
+            height: 50px;
+            width: 50px;
+            border-radius: 25px;
+            text-align: center;
+            color: white;
+            line-height: 50px;
+            font-size: 15px;
+            cursor: pointer;
+
+        }
+
+        #call:hover {
+            background-color: aqua;
+        }
+
+        #call::selection {
+            text-decoration: none;
+        }
+
+
+    </style>
+</head>
+<body>
+<div id="one">1</div>
+<div id="two">2</div>
+<div id="third">3</div>
+
+<div id="parent">parent
+    <div id="child1">child1</div>
+    <div id="child2">child2</div>
+</div>
+
+
+<div id="call">Call-me</div>
+<div>
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium amet cum earum eius esse excepturi incidunt
+    laboriosam molestiae nam, necessitatibus placeat possimus quidem recusandae repellat, repudiandae sed tenetur
+    veritatis, voluptatem!
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium amet cum earum eius esse excepturi incidunt
+    laboriosam molestiae nam, necessitatibus placeat possimus quidem recusandae repellat, repudiandae sed tenetur
+    veritatis, voluptatem!
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium amet cum earum eius esse excepturi incidunt
+    laboriosam molestiae nam, necessitatibus placeat possimus quidem recusandae repellat, repudiandae sed tenetur
+    veritatis, voluptatem!
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium amet cum earum eius esse excepturi incidunt
+    laboriosam molestiae nam, necessitatibus placeat possimus quidem recusandae repellat, repudiandae sed tenetur
+    veritatis, voluptatem!
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium amet cum earum eius esse excepturi incidunt
+    laboriosam molestiae nam, necessitatibus placeat possimus quidem recusandae repellat, repudiandae sed tenetur
+    veritatis, voluptatem!
+</div>
+<!--<script>-->
+<!--    var call = document.querySelector("#call");-->
+<!--    call.addEventListener('click', function () {-->
+<!--        call.style.backgroundColor = "red";-->
+<!--    });-->
+<!--</script>-->
+</body>
+</html>

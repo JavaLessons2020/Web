@@ -10,9 +10,6 @@
             text-align: left;
         }
 
-        table{
-            border: 1px dashed;
-        }
         th {
             width: 50px;
         }
@@ -25,14 +22,37 @@
             text-align: right;
         }
 
+        table {
+            /*border: 1px dashed;*/
+            border-collapse: separate; /*убирает расстояние межде бордерами*/
+            border-spacing: 1px;
+            /*border-bottom: 5px solid red;*/
+            /*border-top: 5px solid blue;*/
+            border-color: #52b24f;
+            border-width: 7px;
+            border-style: inset;
+            border-radius: 15px;
+        }
 
     </style>
 </head>
 <body>
 
 
-<table width="300px">
+<table>
     <caption>Таблица с товарами</caption>
+    <!--    <col style="background-color: #e2861b;">-->
+    <!--    <col style="background-color: blueviolet;">-->
+    <!--    <col>-->
+    <!--    <col style="background-color: greenyellow">-->
+    <!--    <col style="background-color: yellow">-->
+    <!--    <colgroup span="2" style="background-color: greenyellow">-->
+    <!--    </colgroup>-->
+    <!--    <col style="background-color: #b22a15;">-->
+
+<!--    <colgroup>-->
+<!--        <col span="3" style="background-color: #52b24f;">-->
+<!--    </colgroup>-->
     <thead>
     <tr style="height: 30px">
         <th>#</th>
@@ -46,20 +66,24 @@
         <th>1</th>
         <td>Хлеб</td>
         <td rowspan="3">вкусное</td>
-        <td rowspan="2">15</td>
-    </tr>
-    <tr>
-        <th>3</th>
-        <td>молоко</td>
-
-
+        <td>15</td>
     </tr>
     <tr>
         <th>2</th>
         <td>мясо</td>
         <td>50</td>
     </tr>
+    <tr>
+        <th>3</th>
+        <td>молоко</td>
+        <td rowspan="2">25</td>
+    </tr>
+    <tr>
+        <th>4</th>
+        <td>сыр</td>
+        <td>дырявый</td>
 
+    </tr>
     </tbody>
     <tfoot>
     <tr>
@@ -71,13 +95,17 @@
 </table>
 
 
-<ul style="color: red;margin-left: 150px; list-style-image: url('https://images.zakupka.com/i3/firms/27/113/113176/antistressovaya-igrushka-podushka-soft-toys-smaylik-podmigivaet_76590f1817cd1e1_200x200.jpg'); ">
-    <li style="color: blue; list-style-image: url('https://99px.ru/sstorage/1/2019/01/image_12101190255345455401.jpg'); margin-left: 150px">1</li>
-    <li>2</li>
-    <li>3</li>
-</ul>
+<!--<ul style="color: red;margin-left: 150px; list-style-image: url('https://images.zakupka.com/i3/firms/27/113/113176/antistressovaya-igrushka-podushka-soft-toys-smaylik-podmigivaet_76590f1817cd1e1_200x200.jpg'); ">-->
+<!--    <li style="color: blue; list-style-image: url('https://99px.ru/sstorage/1/2019/01/image_12101190255345455401.jpg'); margin-left: 150px">1</li>-->
+<!--    <li>2</li>-->
+<!--    <li>3</li>-->
+<!--</ul>-->
 
 
-<a href="http://google.com"><img src="https://99px.ru/sstorage/1/2019/01/image_12101190255345455401.jpg" alt=""></a>
+<!--
+<a href="http://google.com"><img src="https://99px.ru/sstorage/1/2019/01/image_12101190255345455401.jpg" alt="smile"></a>
+-->
+
+
 </body>
 </html>
