@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <style>
+        body > p {
+            background-color: #2d29b2;
+            color: wheat;
+        }
+
+        div + p {
+            background-color: #b20507;
+        }
+
+        [class$="2"]{
+            background-color: #e2861b;
+        }
+        :focus{
+            background-color: aquamarine;
+        }
+        input:checked{
+            outline: 5px solid black;
+        }
+        :enabled{
+            background-color: yellow;
+        }
+        :disabled{
+            background-color: gray;
+        }
+    </style>
+</head>
+<body>
+
+<div>div</div>
+
+<p class="son1">
+    son1
+
+</p>
+
+<div>sosedi</div>
+
+<p class="son2">son2</p>
+
+<p class="son3">son3
+<h4 class="vnuk">
+    vnuk
+</h4>
+</p>
+
+<p>son4</p>
+
+
+<form action="">
+    <input type="text" disabled>
+    <br>
+    <input type="checkbox">
+    <br>
+    <input type="radio">
+    <br>
+    <textarea></textarea>
+</form>
+
+</body>
+</html>

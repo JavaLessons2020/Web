@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Selectors</title>
+
+    <script src="https://kit.fontawesome.com/e86665a8f5.js" crossorigin="anonymous"></script>
+    <style>
+        nav {
+            background-color: gray;
+            overflow: auto;
+        }
+
+        nav ul {
+            margin: 0;
+        }
+
+        nav li {
+            margin: 0;
+        }
+
+        nav a {
+            color: #e2861b;
+            text-decoration: none;
+            display: block;
+            float: left;
+            border: 1px solid white;
+            padding: 7px;
+            margin: 7px;
+
+        }
+
+        nav a:hover {
+            background-color: #e2861b;
+            color: white;
+        }
+
+        nav ul {
+            list-style: none;
+        }
+
+        nav li:last-child {
+            float: right;
+        }
+
+        li:nth-last-child(3n+4) {
+            background-color: yellow;
+        }
+
+        div:nth-of-type(3) {
+            background-color: #52b24f;
+        }
+        div:empty{
+            width: 100px;
+            height: 100px;
+            border: 1px solid;
+        }
+        div:empty::before{
+            content: "empty";
+        }
+
+        :target{
+         background-color: chartreuse;
+        }
+        p a::before{
+            content: "Это ссылка: ";
+        }
+        p a::after{
+            content: " (" attr(href) ")";
+        }
+        :first-letter{
+            text-transform: uppercase;
+        }
+        .lorem:first-line{
+            background-color: blueviolet;
+        }
+
+        ::selection{
+            background-color:red;
+        }
+
+
+
+
+
+
+
+        .first a {
+            background-color: white;
+        }
+
+        .second a {
+            background-color: #b24841;
+        }
+
+
+    </style>
+</head>
+<body>
+
+<p><a href="http://qwerty.com" target="_blank">qwerty</a></p>
+
+<div>first1</div>
+<div>first2</div>
+<div>first3</div>
+
+<nav class="first">
+    <ul>
+        <li><a href="#">Link</a></li>
+        <li><a href="#">Link</a></li>
+        <li><a href="#">Link</a></li>
+        <li><a href="#">Link</a></li>
+        <li><a href="#">Link</a></li>
+        <li><a href="#">Link</a></li>
+        <li><a href="#"><i class="fab fa-apple-pay"></i></a></li>
+    </ul>
+</nav>
+
+<div>second</div>
+
+<nav class="second">
+    <ul>
+        <li><a href="#">Link</a></li>
+        <li><a href="#">Link</a></li>
+        <li><a href="#">Link</a></li>
+        <li><a href="#">Link</a></li>
+        <li><a href="#">Link</a></li>
+        <li><a href="#">Link</a></li>
+        <li><a href="#"><i class="fas fa-arrow-alt-circle-right"></i></a></li>
+    </ul>
+</nav>
+
+<div>third <a href="#target">target</a></div>
+
+<ul>
+    <li><a href="#">Link</a></li>
+    <li><a href="#">Link</a></li>
+    <li><a href="#">Link</a></li>
+    <li><a href="#">Link</a></li>
+    <li><a href="#">Link</a></li>
+    <li><a href="#">Link</a></li>
+    <li><a href="#">Link</a></li>
+    <li><a href="#">Link</a></li>
+    <li><a href="#">Link</a></li>
+    <li><a href="#">Link</a></li>
+
+
+    <div></div>
+    <div id="target">target</div>
+    <br>
+    <div class="lorem">Lorem ipsum dolor sit amet, consectetur adipisicing elit. At, corporis dolorem doloremque ea eius hic in ipsa iste iusto necessitatibus, nisi omnis placeat possimus quidem repellat rerum suscipit veritatis voluptas.</div>
+</ul>
+</body>
+</html>
