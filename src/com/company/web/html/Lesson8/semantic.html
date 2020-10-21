@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Semantic</title>
+    <style>
+        ul {
+            list-style: none;
+        }
+
+        ul > a {
+            text-decoration: none;
+        }
+
+        mark {
+            background-color: #52b24f;
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+<h1>Это мой сайт</h1>
+<nav>
+    <ul>
+        <li><a href="#">Link</a></li>
+        <li><a href="#">Link</a></li>
+        <li><a href="#">Link</a></li>
+        <li><a href="#">Link</a></li>
+        <li><a href="#">Link</a></li>
+    </ul>
+</nav>
+
+<main>
+    <section>
+        <header>
+            <h2>Раздет 1</h2>
+        </header>
+        <aside>
+            Что-то дополнительное
+        </aside>
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur explicabo nam ullam veritatis!
+            Adipisci cupiditate doloremque doloribus, eius eligendi facere fuga laboriosam maiores mollitia nesciunt
+            perspiciatis quae quas quasi veniam!
+        </p>
+        <footer>
+            Подвал первгого раздела
+        </footer>
+    </section>
+    <section>
+        <header>
+            <h2>Другие семантические теги</h2>
+        </header>
+        <p>
+            <mark>Lorem</mark>
+            ipsum dolor sit amet, consectetur adipisicing elit. Enim illo iure magnam porro qui ratione sapiente
+            tenetur vero. Cumque doloribus esse eum fuga inventore labore pariatur quod repellendus vero
+            voluptatibus!
+        </p>
+        <article>
+            <figure>
+                <img src="https://cdn.fishki.net/upload/post/2019/09/30/3101592/tn/d0b8d181d0bfd183d0b3d0b0d0bdd0bdd0b0d18f-d0bad0bed188d0bad0b0-2.jpg"
+                     alt="" width="100px">
+                <figcaption>
+                    <a href="https://ru.wikipedia.org/wiki/%D0%9A%D0%BE%D1%88%D0%BA%D0%B0">Кошки</a>
+                </figcaption>
+            </figure>
+            <details>
+                <summary>Здесь какая то информация</summary>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi illum laudantium officia quasi
+                    quo? At
+                    atque aut cumque dolor facilis harum in ipsum, iusto nam nihil, nulla, provident! Nobis, vitae!`
+                </p>
+            </details>
+            <br>
+            <br>
+            <time datetime="2020-10-21T21:30">Сегодня</time>
+            Не работает в новых браузерах
+
+            <p>
+                Сегодня температура
+                <meter max="40" low="25" value="15">15 градусов</meter>
+            </p>
+            <p>
+                Я знаю программирование на
+                <progress max="300" value="150"></progress>
+            </p>
+        </article>
+    </section>
+</main>
+<footer>
+    mp4,ogg
+    <video width="320" height="240" controls muted loop poster="https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Cat_and_mouse.jpg/150px-Cat_and_mouse.jpg" >
+        <source src="movie.mp4" type="video/mp4">
+        <source src="movie.ogg" type="video/ogg">
+        <source src="movie.webm" type="video/webm">
+    </video>
+</footer>
+<script>
+
+</script>
+</body>
+</html>

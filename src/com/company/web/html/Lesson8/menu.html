@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Menu</title>
+    <style>
+        nav > ul {
+            list-style: none;
+            display: inline-block;
+            margin: 0;
+            padding: 0;
+            left: 40px;
+            /*display: none;*/
+            transition-duration: 1s;
+            transform: translateY(0px);
+            opacity: 1;
+            position: absolute;
+            z-index: 1000;
+
+        }
+
+        nav li {
+            border-top: 1px solid white;
+            transition-duration: 1s;
+        }
+
+        nav a {
+            width: 90px;
+            text-align: center;
+            display: block;
+            color: #e2861b;
+            text-decoration: none;
+            background-color: black;
+            padding: 8px;
+        }
+
+        nav label {
+            display: block;
+            border-top: 1px solid white;
+            width: 90px;
+            text-align: center;
+            color: #e2861b;
+            text-decoration: none;
+            background-color: black;
+            padding: 8px;
+            z-index: 1000;
+        }
+
+        nav input:checked ~ ul {
+            /*display: block;*/
+            opacity: 0;
+            transition-duration: 1s;
+            transform: translateY(-300px);
+
+        }
+
+        ::selection {
+            background: none;
+        }
+
+        #menu {
+            display: none;
+        }
+
+    </style>
+</head>
+<body>
+<nav>
+    <input type="checkbox" id="menu">
+    <label for="menu">Menu</label>
+    <ul>
+        <li><a href="#">Link</a></li>
+        <li><a href="#">Link</a></li>
+        <li><a href="#">Link</a></li>
+        <li><a href="#">Link</a></li>
+        <li><a href="#">Link</a></li>
+        <li><a href="#">Link</a></li>
+    </ul>
+</nav>
+
+Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut commodi dignissimos dolorem excepturi explicabo facilis id
+iste iure maxime numquam, officia perspiciatis porro rerum sed similique unde voluptate, voluptates voluptatum.
+</body>
+</html>
