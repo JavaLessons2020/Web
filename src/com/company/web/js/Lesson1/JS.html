@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        table, td {
+            text-align: center;
+            border: 1px solid;
+            width: 200px;
+        }
+    </style>
+</head>
+<body>
+<h1>Basic JS</h1>
+<table>
+    <tr>
+        <td>1</td>
+        <td>2</td>
+        <td>3</td>
+    </tr>
+    <tr>
+        <td>1</td>
+        <td>2</td>
+        <td>3</td>
+    </tr>
+    <tr>
+        <td>1</td>
+        <td>2</td>
+        <td>3</td>
+    </tr>
+    <tr>
+        <td>1</td>
+        <td>2</td>
+        <td>3</td>
+    </tr>
+</table>
+<script>
+    //переменные
+    console.log("========type==========")
+    let a = 10;
+    console.log(a + " is " + typeof a);
+    const PI = 3.14;
+    console.log(" pi= " + PI);
+    str = `PI =  + ${PI}`;
+    console.log(str);
+    res = 1 / 0;
+    console.log(res + " type = " + typeof res);
+
+    if (!isFinite(res)) {
+        console.log('is not infinity ' + res);
+    } else {
+        console.log('it is infinity');
+    }
+
+    let num = "1001qweqwe";
+    num1 = Number(num);
+    if (isNaN(num1)) {
+        console.log("This is : " + num1);
+    } else {
+        console.log(num1);
+    }
+
+    nums = parseInt(num);
+    console.log(nums);
+
+    let number = parseFloat("100.5");
+    console.log(number);
+
+    let b = Boolean(null);
+    console.log(b)
+
+
+    console.log("========arr==========");
+
+    //массивы
+    let arr = [1, 2, 3, 4, 5];
+    arr.length = 150;
+    arr[100] = [12, z = "zerro", 14, 15];
+    arr[101] = NaN;
+    arr[102] = undefined;
+    arr[103] = {
+        name: 123,
+        lastname: 13,
+        email: "qew@rtrt.com"
+    };
+    console.log("arr = " + arr.length);
+    console.log("arr = " + arr[100] + " " + typeof arr[100]);
+
+
+    let arr1 = new Array(100);
+    console.log("arr1 = " + arr1.length);
+
+    console.log("========loop==========");
+
+    arrNew = [1, "2", true, NaN, Infinity, [], {}];
+    console.log(arrNew);
+    for (let i = 0; i < arrNew.length; i++) {
+        console.log(arrNew[i]);
+    }
+    console.log("========loop in==========");
+
+    for (let attr in arrNew) {
+        console.log(arrNew[attr]);
+    }
+    console.log("========loop of==========");
+    for (let attr of arrNew) {
+        console.log(attr);
+    }
+
+    console.log("========document write==========");
+    document.write("<h2>Hello Javascript</h2>");
+    alert("Привет JS");
+    let bool = confirm("Ты на занятии?");
+    let age = +prompt("Сколько тебе лет?", 18);
+    document.write("Hello " + bool + " на зянятии");
+    document.write("<br>");
+    if (age > 18) {
+        document.write("<div style='font-size: 40px'>" + `${age}` + "</div>");
+
+    } else {
+        document.write("<div style='font-size: 40px'>меньшне 18</div>");
+    }
+    console.log("========Практика==========");
+
+    let rows = parseInt(prompt("How many rows", 10));
+    let cols = parseInt(prompt("How many cols", 10));
+
+    console.log("rows" + rows);
+    console.log("cols" + cols);
+
+
+    document.write("<table>");
+    for (let i = 0; i < rows; i++) {
+        document.write("<tr>");
+        for (let j = 0; j < cols; j++) {
+            document.write("<td>" + (j+1) + "</td>")
+        }
+        document.write("</tr>")
+    }
+    document.write("</table>");
+
+    let elementsByTagName = document.getElementsByTagName("td");
+
+    console.log("element = " + elementsByTagName);
+    for (let i of elementsByTagName){
+        console.log(i);
+    }
+</script>
+</body>
+</html>
