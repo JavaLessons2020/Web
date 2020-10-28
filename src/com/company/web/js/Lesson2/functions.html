@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Fun</title>
+</head>
+<body>
+<script>
+
+    function Time(){
+        this.hour = 1;
+        this.min = 10;
+        this.sec = 30;
+
+    }
+
+    Time.prototype.addSec = function (seconds){
+        console.log(seconds);
+    }
+
+
+    localtime = new Time();
+    console.log("hour = " + localtime.hour);
+
+    localtime.addSec(12345);
+
+
+</script>
+</body>
+</html>

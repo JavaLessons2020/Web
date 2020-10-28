@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Car</title>
+    <style>
+        table, tr, td, th {
+            border: 1px solid;
+            border-collapse: collapse;
+        }
+    </style>
+</head>
+<body>
+<div>
+    Model
+    <label><input type="text" id="model"></label>
+    <br>
+    <label>
+        Color
+        <select id="color">
+            <option>red</option>
+            <option>green</option>
+            <option>blue</option>
+        </select>
+    </label>
+    <br>
+    <label>
+        Price
+        <input id="price" type="number" step="100">
+    </label>
+    <br>
+    <button id="save">Save</button>
+</div>
+
+<table>
+    <tbody id="cars">
+    <tr>
+        <th>Color</th>
+        <th>Model</th>
+        <th>Price</th>
+    </tr>
+    </tbody>
+</table>
+<script>
+    function Car(color, model, price) { //функция для построения объекта = конструктор
+        this.color = color;//атрибут объекта(поле)
+        this.price = price;
+        this.model = model;
+        this.info = function () { //анонимная ф-я
+            console.log("color = " + color + " model = " + model + " price= " + price)
+        };
+        this.toHTML = function () {
+            return `<tr><td>${this.color}</td><td>${this.model}</td><td>${this.price}</td></tr>`;
+        };
+    }
+
+
+    //Отрабатываем событие клика по кнопке
+    let btnSave = document.getElementById("save");
+    //btnSave.innerHTML += "<h1>Button</h1>";
+
+    //Получаем данные из формы
+    let model = document.getElementById("model");
+    let color = document.getElementById("color");
+    let price = document.getElementById("price");
+
+    let table = document.getElementById("cars");
+    btnSave.onclick = function () {
+        let car = new Car(color.value, model.value, price.value);
+        //table.children[0].innerHTML += car.toHTML();//версия для table
+        table.innerHTML += car.toHTML();//версия для tbody
+        console.dir(table);
+    };
+
+
+</script>
+</body>
+</html>

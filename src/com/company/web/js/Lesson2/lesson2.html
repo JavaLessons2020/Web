@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    {
+        a = 10;
+    }
+
+    function foo() {
+        let a = 20;
+        console.log(`Local var ${a}`);
+    }
+
+    foo();
+    console.log(`global var = ${a}`);
+
+    function Car(color, model, price) { //функция для построения объекта = конструктор
+        this.color = color;//атрибут объекта(поле)
+        this.price = price;
+        this.model = model;
+        // this.info = function () { //анонимная ф-я
+        //     console.log("color = " + color + " model = " + model + " price= " + price)
+        // }
+    }
+
+
+    Car.prototype.info = function () { //анонимная ф-я
+            console.log("color = " + this.color +
+                         " model = " + this.model +
+                         " price= " + this.price);
+        };
+
+
+    let mazda = new Car("red", "Mazda3", 10000);
+    mazda.maxSpeed = 210;
+    //console.dir(mazda);
+    mazda.info();
+
+    let animal = {
+      name:"Bear",
+      age: 10,
+      info: function (){
+          console.log("name: " + this.name + " age: " + this.age);
+      }
+    };
+
+    animal.info();
+
+
+
+
+    // let toyota = mazda;
+    // toyota.color = "blue";
+    // toyota.maxSpeed = 250;
+    // toyota.model = "camry";
+    // console.log(toyota);
+
+
+</script>
+</body>
+</html>
