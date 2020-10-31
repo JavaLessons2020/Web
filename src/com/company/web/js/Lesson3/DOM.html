@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DOM</title>
+
+    <style>
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+<ul id="list" class="ulClass hidden" style="color: blue">
+    <li>first</li>
+    <!--comment-->
+    <li><div id="div">second</div></li>
+    <li>third</li>
+</ul>
+
+
+<button>Off</button>
+<script>
+    (function () {
+        let second = document.querySelector("li:nth-child(2)");
+        console.dir(second);
+        let prevSibling = second.previousElementSibling;
+        console.dir(prevSibling);
+        if (prevSibling.nodeName === "LI") {
+            console.log("outer = " + prevSibling.outerHTML);
+        } else {
+            console.dir("data = " + prevSibling.data);
+        }
+
+        let ul = document.body.firstElementChild;
+        document.documentElement;
+        console.dir(ul);
+
+        console.dir(ul.childNodes);
+        console.dir(ul.children);
+
+        if (ul.hasAttribute('id')) {
+            console.dir(ul.getAttribute("style"));
+        }
+
+        ul.setAttribute("title", "Its ul list");
+        console.dir(ul.getAttribute("title"));
+
+
+        for (let i = 0; i < ul.attributes.length; i++) {
+            console.log("attr: " + ul.attributes[i].name + " value = "
+                + ul.attributes[i].value);
+
+        }
+
+        console.log(ul.className);
+
+        ul.classList.remove("hidden");
+
+
+
+        let button = document.querySelector("button");
+
+        button.onclick = function () {
+            ul.classList.toggle("hidden");
+            if(ul.classList.contains("hidden")){
+                button.innerHTML ="On";
+            }else {
+                button.innerHTML="Off";
+
+            }
+        };
+
+
+    })();
+</script>
+</body>
+</html>

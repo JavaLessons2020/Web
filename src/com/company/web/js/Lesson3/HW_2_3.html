@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Work with Time</title>
+</head>
+<body>
+<script>
+    function Time(hour, min, sec) {
+        this.hour = hour;
+        this.min = min;
+        this.sec = sec;
+    }
+
+    // let localtime = new Time(0, 0, 0);
+
+    Time.prototype.addSec = function (seconds) {
+        if (confirm(`Сейчас ${this.hour}:${this.min}:${localtime.sec}. \n Вы хотите добавить секунды?`)) {
+            let sec = prompt(`Сколько секунд Вы хотите добавить?`);
+            localtime.sec += Number(sec);
+            if ((localtime.sec) < 60) {
+                alert(`Текущее время ${localtime.hour}:${localtime.min}:${localtime.sec}`)
+            } else {
+                let newSec = localtime.sec % 60;
+                let addMin = parseInt(localtime.sec / 60);
+                localtime.sec = newSec;
+                localtime.min += addMin;
+                if ((localtime.min) < 60) {
+                    alert(`Текущее время ${localtime.hour}:${localtime.min}:${localtime.sec}`);
+                } else {
+                    let addhour = parseInt(localtime.min / 60);
+                    localtime.min = localtime.min % 60;
+                    localtime.hour += addhour;
+                    if (localtime.hour < 24) {
+                        alert(`Текущее время ${localtime.hour}:${localtime.min}:${localtime.sec}`);
+                    } else {
+                        localtime.hour = localtime.hour % 24;
+                        alert(`Текущее время ${localtime.hour}:${localtime.min}:${localtime.sec}`);
+                    }
+                }
+            }
+        }
+    }
+
+    function addMin() {
+        if (confirm(`Сейчас ${localtime.hour}:${localtime.min}:${localtime.sec}. \n Вы хотите добавить минуты?`)) {
+            let min = prompt(`Сколько минут Вы хотите добавить?`);
+            localtime.min += Number(min);
+            if ((localtime.min) < 60) {
+                alert(`Текущее время ${localtime.hour}:${localtime.min}:${localtime.sec}`)
+            } else {
+                let addhour = parseInt(localtime.min / 60);
+                localtime.min = localtime.min % 60;
+                localtime.hour += addhour;
+                if (localtime.hour < 24) {
+                    alert(`Текущее время ${localtime.hour}:${localtime.min}:${localtime.sec}`);
+                } else {
+                    localtime.hour = localtime.hour % 24;
+                    alert(`Текущее время ${localtime.hour}:${localtime.min}:${localtime.sec}`);
+                }
+            }
+        }
+    }
+
+    function addHour(){
+        if (confirm(`Сейчас ${localtime.hour}:${localtime.min}:${localtime.sec}. \n Вы хотите добавить часы?`)) {
+            let hour = prompt(`Сколько часов Вы хотите добавить?`);
+            localtime.hour += Number(hour);
+            if (localtime.hour < 24) {
+                alert(`Текущее время ${localtime.hour}:${localtime.min}:${localtime.sec}`);
+            } else {
+                localtime.hour = localtime.hour % 24;
+                alert(`Текущее время ${localtime.hour}:${localtime.min}:${localtime.sec}`);
+            }
+        }
+    }
+
+    while (true) {
+        addSec();
+        addMin();
+        addHour();
+    }
+
+    let newTime = new Time(12,20,10);
+    newTime.addSec();
+</script>
+</body>
+</html>
