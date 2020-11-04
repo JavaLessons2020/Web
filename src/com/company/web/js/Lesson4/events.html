@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Event</title>
+    <style>
+        #picture {
+            border: 1px solid;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+<div id="picture">pic</div>
+<button name="but" onclick="btn()">Button</button>
+<script>
+    function btn() {
+        console.log("Button");
+    }
+
+    let pic = document.getElementById("picture");
+
+    pic.onclick = function () {
+        console.log("picture");
+    }
+
+    let count = 0;
+
+    function context(e) {
+        console.log('contextmenu' + count);
+        count++;
+        e.preventDefault();
+        if (count === 5) {
+            pic.removeEventListener('contextmenu', context);
+        }
+    }
+
+    pic.addEventListener('contextmenu', context);
+
+    console.log("end");
+
+</script>
+</body>
+</html>

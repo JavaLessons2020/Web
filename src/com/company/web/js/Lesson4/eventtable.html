@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Table Event</title>
+    <style>
+        table, td {
+            width: 500px;
+            height: 100px;
+            border: 1px solid;
+            border-spacing: 10px;
+            text-align: center;
+            font-size: 40px;
+        }
+
+        [data-color] {
+            background-color: blue;
+            color: white;
+        }
+
+        #one {
+            width: 200px;
+            height: 200px;
+            border: 1px solid;
+        }
+    </style>
+</head>
+<body>
+<table id="table">
+    <tr>
+        <td>1</td>
+        <td>2</td>
+        <td>3</td>
+        <td>4</td>
+    </tr>
+    <tr>
+        <td>5</td>
+        <td>6</td>
+        <td>7</td>
+        <td>8</td>
+    </tr>
+    <tr>
+        <td>9</td>
+        <td>10</td>
+        <td>11</td>
+        <td>12</td>
+    </tr>
+    <tr>
+        <td>13</td>
+        <td>14</td>
+        <td>15</td>
+        <td>16</td>
+    </tr>
+
+</table>
+<button id="delete">Delete rows</button>
+
+<div id="one"></div>
+<script>
+    (function () {
+        let table = document.getElementById("table");
+        let btn = document.querySelector("#delete");
+
+        table.addEventListener('click', function (e) {
+            console.log(e.target.nodeName);
+            let dataColor = "data-color";
+            if (e.target.nodeName === 'TD') {
+                let tr = e.target.parentElement;
+                //console.dir(tr);
+                if (tr.hasAttribute(dataColor)) {
+                    tr.removeAttribute(dataColor);
+                } else {
+                    tr.setAttribute(dataColor, "true");
+                }
+            }
+        });
+
+        btn.addEventListener('click', function () {
+            let allRows = document.querySelectorAll("[data-color]");
+            for (let i = 0; i < allRows.length; i++) {
+                let tBody = allRows[i].parentElement;
+                console.log(tBody.nodeName)
+                tBody.removeChild(allRows[i]);
+            }
+        });
+    }());
+
+    let one = document.querySelector("#one");
+
+    one.addEventListener('click', function (e){
+       this.innerHTML += e.clientX+"<br>";
+       this.innerHTML+=e.clientY+"<br>";
+    });
+
+    document.onkeydown = function (e) {
+        one.innerHTML += e.code+"<br>";
+    }
+</script>
+</body>
+
+</html>

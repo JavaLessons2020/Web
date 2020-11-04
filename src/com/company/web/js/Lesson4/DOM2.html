@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DOM2</title>
+</head>
+<body>
+<table>
+    <thead>
+    <tr>
+        <th>#</th>
+        <th>name</th>
+        <th>price</th>
+        <th>edit</th>
+    </tr>
+    </thead>
+    <tbody>
+
+    </tbody>
+</table>
+<button id="btn">Plus</button>
+<script>
+    let count = 0;
+    let color = ['blue', 'red', 'yellow', 'black','green'];
+
+    let tbody = document.querySelector("tbody");
+    let btn = document.querySelector("#btn");
+    btn.addEventListener('click', function (e) {
+        let random = Math.floor(Math.random() * (4 + 1));
+        let tr = document.createElement("tr");
+        let td1 = document.createElement("td");
+        let text1 = document.createTextNode(++count);
+        td1.appendChild(text1);
+        let td2 = document.createElement("td");
+        let text2 = document.createTextNode(color[random]);
+        td2.appendChild(text2);
+        let td3 = document.createElement("td");
+        let text3 = document.createTextNode('price');
+        td3.appendChild(text3);
+        let td4 = document.createElement("td");
+        let button = document.createElement("button");
+        button.appendChild(document.createTextNode("DELETE"));
+        button.addEventListener('click', function () {
+            let tr = this.parentElement.parentElement;
+            tbody.removeChild(tr);
+        });
+        button.classList.add("delete");
+        td4.appendChild(button);
+        tr.appendChild(td1);
+        tr.appendChild(td2);
+        tr.appendChild(td3);
+        tr.appendChild(td4);
+        tbody.appendChild(tr);
+    });
+</script>
+</body>
+</html>
