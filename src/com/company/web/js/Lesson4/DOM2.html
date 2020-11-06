@@ -41,8 +41,9 @@
         let button = document.createElement("button");
         button.appendChild(document.createTextNode("DELETE"));
         button.addEventListener('click', function () {
-            let tr = this.parentElement.parentElement;
-            tbody.removeChild(tr);
+            // let tr = this.parentElement.parentElement;
+            // tbody.removeChild(tr);
+             this.parentElement.parentElement.remove();
         });
         button.classList.add("delete");
         td4.appendChild(button);

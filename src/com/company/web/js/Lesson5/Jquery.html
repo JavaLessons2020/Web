@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <style>
+        #two {
+            color: red;
+        }
+
+        .red {
+            color: blueviolet;
+        }
+
+        .yellow {
+            color: yellow;
+        }
+
+        .bold {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+<div>Hello
+    <select>
+        <option>1</option>
+        <option>2</option>
+        <option>3</option>
+        <option>4</option>
+        <option>5</option>
+    </select>
+
+</div>
+<ul id="one">
+    <li>Link</li>
+    <li>Link</li>
+    <li>Link</li>
+    <li>Link</li>
+    <li>Link</li>
+</ul>
+
+<ul id="two">
+    <li>Link1</li>
+    <li>Link2</li>
+    <li>Link3</li>
+    <li>Link4</li>
+    <li>Link5</li>
+    <li>Link6</li>
+    <li>Link7</li>
+</ul>
+
+
+<input type="checkbox">
+<input type="text">
+<input type="radio">
+
+<br>
+
+
+<script>
+
+
+    $(function () {
+        let d = $("div");
+        console.log(d);
+
+        let list = $("#two>li");
+
+
+        list.css("background", "green")
+            .css("list-style", "none")
+            .css("display", "inline-block");
+
+        list.eq(1).css("background", "red").css('color', 'white');
+
+        list.click(function (e) {
+            alert($(this).text());
+        });
+        console.log(list);
+
+        // $(":not(:checked)").click(function (){
+        //     alert("checked");
+        // });
+
+        //устаревшая версия
+        //$("[type=checkbox]:not(:checked)").css("outline","3px solid red");
+        //$("[type=checkbox]:checked").css("outline","3px solid green");
+
+
+        //$(":checkbox")
+        $("[type=checkbox]").click(function () {
+            if ($(this).prop("checked")) {
+                $(this).css("outline", "3px solid red");
+            } else {
+                $(this).css("outline", "3px solid green");
+            }
+        });
+
+        $("<p class='bold'>Hello JQuery</p>").appendTo($(document.body));
+
+
+        let click = 0;
+
+        $('div').click(function () {
+            //1 ВАРИАНТ
+            // if ($(this).attr('class') === "red") {
+            //     $(this).attr('class', '').text(`Click = ${++click}`);
+            // } else {
+            //     $(this).attr('class', "red");
+            // }
+
+            //2 ВАРИАНТ
+            // $(this).text(`Click = ${++click}`);
+            // if (!$(this).hasClass("red")) {
+            //     $(this).addClass("red");
+            // } else {
+            //     $(this).removeClass("red");
+            // }
+
+            //3 ВАРИАНТ
+            // $(this).text(`Click = ${++click}`);
+            // $(this).toggleClass("red", click % 5 === 0);
+
+            $(":selected").each(function (idx, item){
+                console.dir($(item).text());
+            });
+
+
+        });
+
+        $("li:eq(4)").css("background", "blue").css('color', 'white');
+        $("li:gt(6)").css("background", "yellow");
+        $("li:lt(3)").css("background", "gray");
+        $("li:contains('Link4')").css("background", "pink");
+
+    });
+
+</script>
+</body>
+</html>
