@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Event</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+</head>
+<body>
+<!--"onsubmit="return false"-->
+<form id="target1">
+    <input type="text" value="Hello there">
+    <input type="submit" value="Go">
+</form>
+<div id="other1">Triggered</div>
+
+
+<form id="target2">
+    <input class="target_first" type="text" value="Hello there">
+    <select class="target">
+        <option value="item1">item1</option>
+        <option value="item2">item2</option>
+    </select>
+</form>
+<div id="other2">Triggered</div>
+
+<button>enter</button>
+<script>
+    $(function () {
+        $("#target1").submit(function (event) {
+            $("#other1").html("<mark>submit</mark>");
+            event.preventDefault();
+        });
+        //работает для формы select
+        $(".target").change(function (e) {
+            console.log(e.target);
+            $("#other2").html("<mark>" + $(e.target).val() + "</mark>");
+            e.preventDefault();
+        });
+        // //работает при вводе текста и потери фокуса с объекта
+        // $(".target_first").change(function (e){
+        //     $("#other2").html("<mark>"+$(e.target).val()+"</mark>");
+        //     e.preventDefault();
+        // });
+
+        //работает при вводе текста сразу
+        $(".target_first").keyup(function (e) {
+            $("#other2").html("<mark>" + $(e.target).val() + "</mark>");
+            e.preventDefault();
+        });
+
+        //работает при выделении текста
+        $(".target_first").select(function (e) {
+            $("#other2").html("<mark>" + $(e.target).val() + "</mark>");
+            e.preventDefault();
+        });
+
+        $("input").focusin(function () {
+            $(this).css("background", "red");
+        });
+
+        $("input").focusout(function () {
+            $(this).css("background", "white");
+        });
+
+        $("button").on('click', function (){
+            alert("BTN CLICK");
+        })
+    });
+
+</script>
+</body>
+</html>

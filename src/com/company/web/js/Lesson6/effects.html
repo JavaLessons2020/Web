@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Effects</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+<ul>
+    <li>item1</li>
+    <li>item2</li>
+    <li>item3</li>
+    <li>item4</li>
+    <li>item5</li>
+</ul>
+
+<button></button>
+<button></button>
+<button></button>
+<button></button>
+<button></button>
+
+
+<div style="width: 100px; height: 100px; border: 1px solid" class="box">div</div>
+
+<script>
+    $('button').first().text('hide').click(function () {
+        //slow 600
+        //normal 400
+        //fast 200
+        $('li').first().hide('fast')
+    })
+        .end()
+        .eq(1).text('show').click(function () {
+        $('li').first().show('normal');
+    })
+        //fade
+        .end()
+        .eq(2).text('fadeOut').click(function () {
+        $('li').first().fadeOut('slow');
+    })
+
+        .end()
+        .eq(3).text('fadeIn').click(function () {
+        $('li').first().fadeIn('slow');
+    })
+        .end()
+        .eq(4).text('fadeToggle').click(function () {
+        $('li').first().fadeToggle('slow');
+    })
+        //slide
+        //fade
+        .end()
+        .eq(5).text('slide').click(function () {
+        $('li').first().slideDown('slow');
+    })
+
+        .end()
+        .last().text('fadeTo').click(function () {
+        $('li').first().fadeTo('slow', 0.5, function () {
+            alert("animation complete");
+        });
+    });
+
+
+    $(".box").click(function () {
+        $(this).animate({
+            fontSize: "+=40px",
+            marginLeft: "+=100px",
+            height: "+=100px",
+            width: "+=100px"
+        }, "slow");
+    });
+</script>
+</body>
+</html>
