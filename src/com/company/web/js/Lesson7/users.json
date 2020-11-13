@@ -1,0 +1,17 @@
+
+
+
+{
+  "cars": [
+    {
+      "name": "Tesla",
+      "price": 2000,
+      "color": "red"
+    },
+    {
+      "name": "Nissan",
+      "price": 5000,
+      "color": "green"
+    }
+  ]
+}

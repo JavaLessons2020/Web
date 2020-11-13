@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Json</title>
+</head>
+<body>
+<script>
+    (function(){
+        let tesla = {
+            name: "Tesla",
+            price: 12000,
+            color: "red",
+            info: function (){
+                console.log(this.name +" "+ this.price + " " + this.color  )
+            }
+        };
+
+        let vaz = Object.create(tesla);
+        vaz.name = "Kalina";
+        vaz.info();
+
+
+        //JSON
+        let cars = JSON.parse('{"cars":[{"name": "Tesla", "price": 2000, "color": "red"}, ' +
+            '{"name": "Nissan","price": 5000,"color": "green"}]}');
+        console.dir(cars);
+    })();
+</script>
+</body>
+</html>
