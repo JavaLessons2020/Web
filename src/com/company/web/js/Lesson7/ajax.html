@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ajax</title>
+</head>
+<body>
+<script>
+    (function () {
+        let xhr = new XMLHttpRequest();
+        //let url = "users.json";
+        let url = "http://api.openweathermap.org/data/2.5/weather?APPID=7b5cbb6bb21d0fc862c3b47a3b967ddf&lat=48.28&lon=35.1"
+        xhr.open("GET", url, true); //true - ассинхронная отправка данных
+                                    //false - синхронная
+        //xhr.overrideMimeType("text/xml"); //указать браузеру с каким content-type работать
+        xhr.send();
+        xhr.onreadystatechange = function () {
+            console.dir(xhr.readyState);
+            if (xhr.readyState === 4 || xhr.status === 200) {
+                // console.log("Headers = " + xhr.getResponseHeader("content-type"));
+                // let users = JSON.parse(xhr.responseText);
+                // console.dir(users.users);
+                console.log(xhr.responseText);
+                let weather = JSON.parse(xhr.responseText);
+                console.dir(weather.name)
+            }
+        };
+    })();
+</script>
+</body>
+</html>
