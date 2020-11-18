@@ -6,25 +6,55 @@
 </head>
 <body>
 <script>
-    (function(){
+    (function () {
         let tesla = {
             name: "Tesla",
             price: 12000,
             color: "red",
-            info: function (){
-                console.log(this.name +" "+ this.price + " " + this.color  )
+            info: function () {
+                console.log(this.name + " " + this.price + " " + this.color)
             }
         };
 
         let vaz = Object.create(tesla);
         vaz.name = "Kalina";
+        vaz.color = "green";
+        vaz.price = 300;
         vaz.info();
 
+        console.log(vaz);
 
         //JSON
         let cars = JSON.parse('{"cars":[{"name": "Tesla", "price": 2000, "color": "red"}, ' +
             '{"name": "Nissan","price": 5000,"color": "green"}]}');
         console.dir(cars);
+
+        // let str = JSON.stringify([tesla, vaz]);
+        // console.log(str);
+
+        let tes = JSON.stringify(tesla, function (key, value) {
+            if (key === 'price') {
+                return undefined;
+            } else {
+                return value;
+            }
+        });
+
+        let toyota = JSON.parse('{ "name": "prius", "color": "black", "date": "2023-11-18T17:59:51.021Z" }', function (key, value){
+            // if (key === "vendor") {
+            //     return undefined;
+            // } else {
+            //     return value;
+            // }
+            if(key === "date"){
+                return new Date(value);
+            }
+            return value;
+        });
+        console.log(toyota);
+        console.log(toyota.date.getFullYear());
+       let d =  new Date();
+       console.log(d.toJSON());
     })();
 </script>
 </body>

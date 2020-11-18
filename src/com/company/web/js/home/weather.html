@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ajax</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <style>
+        body {
+            background: url("sky.jpg");
+        }
+
+        table {
+            color: white;
+            margin-top: 10%;
+            margin-left: 30%;
+        }
+    </style>
+</head>
+<body>
+<table>
+    <tbody>
+    <tr>
+        <td>City</td>
+        <td>Odessa</td>
+    </tr>
+    <tr>
+        <td>Station</td>
+        <td id="sta"></td>
+    </tr>
+    <tr>
+        <td>Temperature</td>
+        <td id="tem"></td>
+    </tr>
+    <tr>
+        <td>Pressure</td>
+        <td id="pre"></td>
+    </tr>
+    <tr>
+        <td>wind</td>
+        <td id="speed"></td>
+    </tr>
+    <tr>
+        <td>Humidity</td>
+        <td id="hum"></td>
+    </tr>
+    </tbody>
+</table>
+<script>
+    (function () {
+        let weather;
+        let xhr = new XMLHttpRequest();
+        let url = "http://api.openweathermap.org/data/2.5/weather?APPID=7b5cbb6bb21d0fc862c3b47a3b967ddf&lat=46,2&lon=30,4";
+        xhr.open("GET", url, true);
+        xhr.send();
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState === 4) {
+                weather = JSON.parse(xhr.responseText);
+                console.dir(weather);
+            }
+
+            $("#sta").append(weather.name);
+            //температура
+            let temp = parseInt(weather.main.temp);
+            $("#tem").empty().append((temp - 273) + " C");
+            //давление
+            let press = parseInt(weather.main.pressure);
+            $("#pre").empty().append(press + " мм рт.ст.");
+            //ветер
+            let wind = parseInt(weather.wind.speed);
+            $("#speed").empty().append(wind + " m/sec");
+            //влажность
+            let humid = parseInt(weather.main.humidity);
+            $("#hum").empty().append(humid + " %");
+        }
+    })();
+</script>
+</body>
+</html>
